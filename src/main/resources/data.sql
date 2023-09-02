@@ -1,3 +1,7 @@
+/**
+* 테스트 용 데이터
+*/
+
 -- 123 게시글
 insert into article (title, content, create_by, modified_by, create_at, modified_at) values
                                                                                                     ('Quisque ut erat.', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
