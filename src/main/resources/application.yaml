@@ -1,11 +1,23 @@
 debug: false
+# 디버그 모드가 비활성화되어 있음을 나타냅니다.
+# 디버그 모드는 애플리케이션 실행 중에 더 자세한 로그 정보를 표시합니다.
+# 여기서는 디버그 모드가 비활성화되어 있으므로 로그 출력이 덜 자세하게 설정됩니다.
+
 management.endpoints.web.exposure.include: "*"
+# Spring Boot 액츄에이터(Actuator) 엔드포인트에 대한 노출 설정입니다.
+# "*"을 사용하여 모든 엔드포인트가 노출됩니다.
+# 액츄에이터 엔드포인트는 애플리케이션의 관리 및 모니터링을 위한 엔드포인트를 제공합니다.
 
 logging:
   level:
     com.fastcampus.projectboard: debug
     org.springframework.web.servlet: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
+# 로깅 설정입니다. 여러 패키지 및 클래스에 대한 로깅 레벨 및 설정을 정의합니다.
+# com.fastcampus.projectboard부터 순서대로 설명하자면, 패키지의 클래스에 대한 로깅 레벨을 디버그로 설정합니다.
+# Spring Framework의 웹 서블릿 클래스에 대한 로깅 레벨을 디버그로 설정합니다.
+# Hibernate의 SQL 바인더에 대한 로깅 레벨을 트레이스로 설정합니다.
+
 
 spring:
   datasource:
@@ -13,7 +25,6 @@ spring:
     username: dohyeon
     password: 12341234@
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     defer-datasource-initialization: true
     hibernate.ddl-auto: create
@@ -24,9 +35,9 @@ spring:
   h2.console.enabled: false
   sql.init.mode: always
   #tymeleaf.cache: false
-  #data.rest:
-  #  base-path: /api
-  #  detection-strategy: annotated
+  data.rest:
+    base-path: /api
+    detection-strategy: annotated # anotation 한 것만 repository에서 오픈
   #thymeleaf3.decoupled-logic: true
   #security:
   #  oauth2:
@@ -44,6 +55,16 @@ spring:
   #          token-uri: https://kauth.kakao.com/oauth/token
   #          user-info-uri: https://kapi.kakao.com/v2/user/me
   #          user-name-attribute: id
+# Spring Boot 애플리케이션의 주요 구성 설정입니다.
+# datasource -> 데이터베이스 연결 정보를 설정합니다.
+#               MySQL 데이터베이스와 연결하며 URL, 사용자 이름, 비밀번호, 드라이버 클래스를 지정합니다.
+# jpa -> Java Persistence API (JPA) 설정을 정의합니다.
+#         데이터소스 초기화를 지연시키고, Hibernate의 DDL 자동 생성을 "create"로 설정하며, SQL 쿼리 출력을 활성화합니다.
+#         추가적인 Hibernate 속성도 정의됩니다.
+# h2.console.enabled: false -> H2 데이터베이스 콘솔을 비활성화합니다.
+#                               H2 콘솔은 개발 및 디버깅 목적으로 사용될 수 있는 내장 데이터베이스 관리 도구입니다.
+# sql.init.mode: always -> SQL 초기화 모드를 항상 실행으로 설정합니다.
+#                           이것은 애플리케이션이 시작될 때 SQL 초기화 스크립트를 항상 실행하도록 하는 것입니다.
 
 ---
 

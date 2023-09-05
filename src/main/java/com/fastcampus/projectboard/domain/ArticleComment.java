@@ -13,7 +13,8 @@ import java.util.Objects;
         @Index(columnList = "createAt"),
         @Index(columnList = "createBy"),
 })
-@Entity
+@Entity // 데이터베이스 테이블과 매핑
+// 1도메인 = 1엔티티 : ArticleComment 도메인 클래스를 JPA 엔티티로 사용
 public class ArticleComment extends AuditingFields{
 
     @Id
@@ -47,3 +48,7 @@ public class ArticleComment extends AuditingFields{
         return Objects.hash(id);
     }
 }
+
+/* 자세한 설명:
+* Article 클래스 참고
+* */
