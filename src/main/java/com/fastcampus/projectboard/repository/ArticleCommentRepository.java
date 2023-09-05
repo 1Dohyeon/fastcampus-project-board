@@ -2,8 +2,10 @@ package com.fastcampus.projectboard.repository;
 
 import com.fastcampus.projectboard.domain.ArticleComment;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 // ArticleComment 엔티티를 다루기 위한 레포지토리
+@RepositoryRestResource
 public interface ArticleCommentRepository extends JpaRepository<ArticleComment, Long> {
 }
 

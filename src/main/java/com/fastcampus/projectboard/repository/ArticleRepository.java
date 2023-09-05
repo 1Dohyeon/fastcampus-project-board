@@ -3,8 +3,10 @@ package com.fastcampus.projectboard.repository;
 import com.fastcampus.projectboard.domain.Article;
 // Spring Data JPA에서 기본적인 CRUD (Create, Read, Update, Delete) 작업을 수행하기 위한 메서드를 제공
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 // Article 엔티티를 다루기 위한 레포지토리
+@RepositoryRestResource
 public interface ArticleRepository extends JpaRepository<Article, Long> {
 }
 
