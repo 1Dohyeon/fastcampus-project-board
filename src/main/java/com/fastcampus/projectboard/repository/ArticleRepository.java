@@ -31,6 +31,7 @@ public interface ArticleRepository extends
     }
 }
 
+
 /* 자세한 설명:
 * import com.fastcampus.projectboard.domain.Article;:
 * Article 엔티티를 사용하기 위해 해당 엔티티를 import 합니다.
